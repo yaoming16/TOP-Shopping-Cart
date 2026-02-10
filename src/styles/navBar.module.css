@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navItem {
+    padding: 10px;
+    font-size: 1.3rem;
+    color: #333;
+    text-decoration: none;
+}
