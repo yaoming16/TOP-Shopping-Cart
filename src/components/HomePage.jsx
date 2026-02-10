@@ -4,7 +4,7 @@ import "../styles/homePage.css";
 function HomePage() {
   return (
     <>
-      <NavBar />
+      <NavBar active={true} />
       <main>Homepage</main>
     </>
   );

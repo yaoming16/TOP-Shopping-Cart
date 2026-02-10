@@ -10,4 +10,19 @@
     font-size: 1.3rem;
     color: #333;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navItem:hover {
+    color: #0070f3;
+}
+
+.navItemActive {
+    color: #0070f3;
+    font-weight: bold;
 }
