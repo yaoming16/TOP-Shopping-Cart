@@ -1,5 +1,5 @@
 import NavBar from "../elements/NavBar";
-import "../../styles/homePage.css";
+import "../../styles/index.css";
 
 function HomePage() {
   return (

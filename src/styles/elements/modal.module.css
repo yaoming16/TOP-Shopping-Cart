@@ -1,0 +1,25 @@
+.dialog {
+    margin: auto auto;
+    width: 40%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--main-btn-border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-bg);
+}
+
+.dialog::backdrop {
+    background: rgba(0, 0, 0, 0.50);
+}
+
+/* hide native dialog when not open (override browser/css that forces it visible) */
+.dialog:not([open]) {
+    display: none !important;
+}
+
+/* fallback visible class for environments without dialog API */
+.dialog.visible {
+    display: block;
+}
