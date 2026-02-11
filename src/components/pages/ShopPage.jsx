@@ -78,7 +78,7 @@ function ShopPage() {
               {loadingItems ? <Loading /> : null}
               <ul className={s.itemsGrid}>
                 {selectedItems.map((item) => (
-                  <ItemCard info={item} key={item.id} manageClick={itemCardClick} />
+                  <ItemCard info={item} key={'shop-' + item.id} manageClick={itemCardClick} />
                 ))}
               </ul>
             </section>

@@ -3,6 +3,9 @@ import { useEffect, useRef } from "react";
 import s from "../../styles/elements/modal.module.css";
 
 import Carousel from "./Carousel";
+import Comment from "./Comment";
+
+import { closeSVG } from "../../utils/svg";
 
 function Modal({ info, open = false, setOpen }) {
   const ref = useRef(null);
@@ -15,6 +18,19 @@ function Modal({ info, open = false, setOpen }) {
     if (!open && dialog.open) dialog.close();
   }, [open]);
 
+  //if there is only one img for the item we dont need a carousel and just use an img tag. If no images we will use thumbnail.
+  let carouselOrOneImg;
+  if (info.images.length > 1) {
+    carouselOrOneImg = <Carousel itemName={info.title} photos={info.images} />;
+  } else {
+    carouselOrOneImg = (
+      <img
+        src={(info.images.length === 1 ? info.images[0] : info.thumbnail)}
+        alt={info.title}
+      />
+    );
+  }
+
   return (
     <dialog className={s.dialog} closedby="any" ref={ref}>
       <button
@@ -22,25 +38,13 @@ function Modal({ info, open = false, setOpen }) {
         autoFocus
         onClick={() => setOpen(false)}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32px"
-          height="32px"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
-            fill="#0F1729"
-          />
-        </svg>
+        {closeSVG}
       </button>
-      <Carousel itemName={info.title} photos={info.images}/>
+      {carouselOrOneImg}
+
       <h2>{info.title}</h2>
 
-      <div>
+      <section>
         <p>{info.description}</p>
         <p>
           $ <span>{info.price}</span>
@@ -51,7 +55,12 @@ function Modal({ info, open = false, setOpen }) {
         <p>
           Brand: <span>{info.brand}</span>
         </p>
-      </div>
+      </section>
+      <section aria-labelledby="comments-heading">
+        <h2>User Reviews</h2>
+        {info.reviews.map((review, index) => <Comment info={review} commentIndex={index} key={`review-${info.id}-${index}`}/>)}
+      </section>
+
     </dialog>
   );
 }
