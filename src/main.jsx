@@ -1,10 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
-import HomePage from './components/HomePage';
-import CartPage from './components/CartPage';
-import ShopPage from './components/ShopPage';
+import HomePage from "./components/pages/HomePage";
+import CartPage from "./components/pages/CartPage";
+import ShopPage from "./components/pages/ShopPage";
 
 const router = createBrowserRouter([
   {
@@ -12,17 +12,17 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "cart",
+    path: "/cart",
     element: <CartPage />,
   },
   {
-    path: "shop",
+    path: "/shop",
     element: <ShopPage />,
-  }
+  },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
-)
+);

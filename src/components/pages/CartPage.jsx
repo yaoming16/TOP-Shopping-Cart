@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "../elements/NavBar";
 
 function CartPage() {
   return (
