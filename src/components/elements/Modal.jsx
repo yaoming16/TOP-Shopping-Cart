@@ -25,7 +25,7 @@ function Modal({ info, open = false, setOpen }) {
   } else {
     carouselOrOneImg = (
       <img
-        src={(info.images.length === 1 ? info.images[0] : info.thumbnail)}
+        src={info.images.length === 1 ? info.images[0] : info.thumbnail}
         alt={info.title}
       />
     );
@@ -40,27 +40,50 @@ function Modal({ info, open = false, setOpen }) {
       >
         {closeSVG}
       </button>
-      {carouselOrOneImg}
+      <article>
+        <header>
+          {carouselOrOneImg}
 
-      <h2>{info.title}</h2>
+          <h1>{info.title}</h1>
+        </header>
 
-      <section>
-        <p>{info.description}</p>
-        <p>
-          $ <span>{info.price}</span>
-        </p>
-        <p>
-          Stock: <span>{info.stock} units</span>
-        </p>
-        <p>
-          Brand: <span>{info.brand}</span>
-        </p>
-      </section>
-      <section aria-labelledby="comments-heading">
-        <h2>User Reviews</h2>
-        {info.reviews.map((review, index) => <Comment info={review} commentIndex={index} key={`review-${info.id}-${index}`}/>)}
-      </section>
-
+        <section aria-labelledby="product-details">
+          <h2 id="product-details">Product Details</h2>
+          <p>{info.description}</p>
+          <dl>
+            {info.brand ? (
+              <>
+                <dt>Brand</dt>
+                <dd>{info.brand}</dd>
+              </>
+            ) : null}
+            <dt>Price</dt>
+            <dd>{info.price}</dd>
+            <dt>Stock</dt>
+            <dd>{info.availabilityStatus}</dd>
+            {info.dimensions?  (
+              <>
+                <dt>Width</dt>
+                <dd>{info.dimensions.width}</dd>
+                <dt>Height</dt>
+                <dd>{info.dimensions.height}</dd>
+                <dt>Depth</dt>
+                <dd>{info.dimensions.depth}</dd>
+              </>
+            ):null}
+          </dl>
+        </section>
+        <aside aria-labelledby="reviews-heading">
+          <h2>User Reviews</h2>
+          {info.reviews.map((review, index) => (
+            <Comment
+              info={review}
+              commentIndex={index}
+              key={`review-${info.id}-${index}`}
+            />
+          ))}
+        </aside>
+      </article>
     </dialog>
   );
 }
