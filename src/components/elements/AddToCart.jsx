@@ -1,15 +1,15 @@
 import { useState } from "react";
 import useCart from "../../hooks/useCart";
+import QuantityInput from "./QuantityInput";
 
 function AddToCart({itemInfo}) {
 
   const [quantity , setQuantity] = useState(1);
   const cart = useCart();
 
-
   return (
     <div>
-      <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))}></input>
+      <QuantityInput min={1} value={quantity} onChange={setQuantity}  />
       <button onClick={() => cart.addItem(itemInfo, quantity)}>Add to Cart</button>
     </div>
   )

@@ -8,10 +8,8 @@ function cartReducer(state, action) {
 
       // If the item is already in the cart 
       if (foundItem) {
-        console.log("Antes",state.items)
         let index = state.items.indexOf(foundItem);
-        state.items[index].quantity += action.payload.quantity;
-        console.log("Despues",state.items)
+        state.items[index].quantity += action.quantity;
         return {
           ...state
         }
