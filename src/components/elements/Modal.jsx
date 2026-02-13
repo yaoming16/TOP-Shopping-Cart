@@ -4,6 +4,8 @@ import s from "../../styles/elements/modal.module.css";
 
 import Carousel from "./Carousel";
 import Comment from "./Comment";
+import InfoDL from "./InfoDL";
+import AddToCart from "./AddToCart";
 
 import { closeSVG } from "../../utils/svg";
 
@@ -51,27 +53,20 @@ function Modal({ info, open = false, setOpen }) {
           <h2 id="product-details">Product Details</h2>
           <p>{info.description}</p>
           <dl>
-            {info.brand ? (
-              <>
-                <dt>Brand</dt>
-                <dd>{info.brand}</dd>
-              </>
-            ) : null}
-            <dt>Price</dt>
-            <dd>{info.price}</dd>
-            <dt>Stock</dt>
-            <dd>{info.availabilityStatus}</dd>
-            {info.dimensions?  (
-              <>
-                <dt>Width</dt>
-                <dd>{info.dimensions.width}</dd>
-                <dt>Height</dt>
-                <dd>{info.dimensions.height}</dd>
-                <dt>Depth</dt>
-                <dd>{info.dimensions.depth}</dd>
-              </>
-            ):null}
+            <InfoDL name="Brand" info={info.brand} />
+            <InfoDL name="Price" info={info.price} />
+            <InfoDL
+              name={["Width", "Height", "Depth"]}
+              info={info.dimensions}
+            />
+            <InfoDL name="Warranty" info={info.warrantyInformation} />
+            <InfoDL name="Stock" info={info.availabilityStatus} />
+            <InfoDL name="Shipping" info={info.shippingInformation} />
+            <InfoDL name="Return Policy" info={info.returnPolicy} />
           </dl>
+        </section>
+        <section>
+          <AddToCart itemInfo={info} />
         </section>
         <aside aria-labelledby="reviews-heading">
           <h2>User Reviews</h2>

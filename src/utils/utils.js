@@ -8,3 +8,7 @@ export async function fetchData(url) {
     return null;
   }
 }
+
+export function findItemById(items, id) {
+  return items.find(item => item.id === id) || null;
+}
