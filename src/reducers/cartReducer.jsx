@@ -1,31 +1,33 @@
 import { findItemById } from "../utils/utils";
 
 function cartReducer(state, action) {
+  let foundItem = findItemById(state.items, action.payload.id);
+  let index = state.items.indexOf(foundItem);
   switch (action.type) {
-
     case "ADD_ITEM":
-      let foundItem = findItemById(state.items, action.payload.id);
-
-      // If the item is already in the cart 
+      // If the item is already in the cart
       if (foundItem) {
-        let index = state.items.indexOf(foundItem);
-        state.items[index].quantity += action.quantity;
-        return {
-          ...state
-        }
+        const items = state.items.map((it, i) =>
+          i === index ? { ...it, quantity: it.quantity + action.quantity } : it,
+        );
+        return { ...state, items };
       }
+      // if item not in the cart
+      return {
+        ...state,
+        items: [
+          ...state.items,
+          { ...action.payload, quantity: action.quantity },
+        ],
+      };
 
-      // if findItemById returned null (didnt find the item the user wants to add already in the cart)
-      if (!foundItem) {
-        return {
-          ...state,
-          items: [
-            ...state.items,
-            { ...action.payload, quantity: action.quantity },
-          ],
-        };
-      }
+    case "REMOVE_ALL_ITEMS":
+      if (!foundItem) return state;
+      const items = state.items.filter((_, i) => i !== index);
+      return { ...state, items };
 
+    default:
+      return state;
   }
 }
 
