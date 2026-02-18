@@ -21,11 +21,22 @@ function cartReducer(state, action) {
         ],
       };
 
-    case "REMOVE_ALL_ITEMS":
+    case "REMOVE_ITEM":
       if (!foundItem) return state;
       const items = state.items.filter((_, i) => i !== index);
       return { ...state, items };
-
+    
+    case "SET_QUANTITY":
+      // If found item in the cart we change quantity
+      if (foundItem) {
+        const items = state.items.map((it, i) =>
+          i === index ? { ...it, quantity: action.quantity } : it,
+        );
+        return { ...state, items };
+      }
+      //else return 
+      return state;
+      
     default:
       return state;
   }

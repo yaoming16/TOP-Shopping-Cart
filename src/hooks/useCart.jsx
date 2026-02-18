@@ -17,7 +17,7 @@ function useCart() {
       totalPrice += item.price * item.quantity;
       totalItems += item.quantity;
     }
-    return { totalPrice, totalItems };
+    return { totalPrice: totalPrice, totalItems };
   }
 
   //Add items to the cart
@@ -26,6 +26,7 @@ function useCart() {
       id: itemInfo.id,
       title: itemInfo.title,
       price: itemInfo.price,
+      thumbnail: itemInfo.thumbnail,
     };
     dispatch({ type: "ADD_ITEM", payload: formatedData, quantity: quantity });
   }
@@ -35,14 +36,24 @@ function useCart() {
     return findItemById(cart.items, id);
   }
 
+  function removeItem(itemInfo) {
+    dispatch({type: "REMOVE_ITEM", payload: itemInfo})
+  }
+
+  function setItemQuantity(itemInfo, newQuantity) {
+    dispatch({type: "SET_QUANTITY", payload: itemInfo, quantity: newQuantity})
+  }
+
   return {
     // State
     items: cart.items,
 
     //Actions
     addItem,
+    removeItem,
     findById,
     calculateTotals,
+    setItemQuantity,
   };
 }
 

@@ -2,7 +2,10 @@ import { Link, useLocation } from "react-router";
 
 import s from "../../styles/elements/navBar.module.css";
 
+import useCart from "../../hooks/useCart";
+
 function NavBar() {
+  const cart = useCart();
   const location = useLocation();
   return (
     <header>
