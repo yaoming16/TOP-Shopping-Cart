@@ -1,0 +1,25 @@
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: stretch;
+    gap: 0.5rem;
+}
+
+.img {
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.container {
+    align-items: center;
+    padding: 1rem 0;
+}

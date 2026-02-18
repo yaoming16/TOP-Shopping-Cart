@@ -2,7 +2,6 @@ import NavBar from "../elements/NavBar";
 import CartCard from "../elements/CartCard";
 
 import useCart from "../../hooks/useCart";
-import { useEffect } from "react";
 
 function CartPage() {
   const cart = useCart();

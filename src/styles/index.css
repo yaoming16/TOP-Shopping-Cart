@@ -1,41 +1,192 @@
+/*
+ * ================================
+ * RUSTIC & WARM COLOR PALETTE
+ * ================================
+ * 
+ * This palette creates a cozy, home-like atmosphere with warm, earthy tones
+ * inspired by rustic aesthetics and natural materials.
+ * 
+ * Primary Colors:
+ * - Warm Cream (#F7F3E9): Main background, soft and inviting
+ * - Rich Terracotta (#C65D06): Primary accent, warm and earthy
+ * - Deep Forest (#4A5D23): Secondary accent, grounding dark green
+ * - Warm Brown (#8B5A3C): Tertiary accent, wood-like warmth
+ * 
+ * Supporting Colors:
+ * - Soft Sage (#A8B299): Muted green for subtle accents
+ * - Warm Gray (#6B6B5C): Body text, natural and readable
+ * - Dark Brown (#3E2723): Headings and emphasis
+ * - Light Sand (#E8DCC0): Subtle backgrounds and containers
+ * - Burnt Orange (#CC7A00): Hover states and interactions
+ * - Cream White (#FAF8F3): Clean highlights and cards
+ * 
+ */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 
-  --main-btn-border: #007bff;
-  --main-bg: #f9f9f9;
+  /* Rustic & Warm Color Palette */
+  /* Primary Colors */
+  --warm-cream: #F7F3E9;
+  --rich-terracotta: #C65D06;
+  --deep-forest: #4A5D23;
+  --warm-brown: #8B5A3C;
+  
+  /* Supporting Colors */
+  --soft-sage: #A8B299;
+  --warm-gray: #6B6B5C;
+  --dark-brown: #3E2723;
+  --light-sand: #E8DCC0;
+  --burnt-orange: #CC7A00;
+  --cream-white: #FAF8F3;
+  
+  /* Legacy variables (updated) */
+  --main-btn-border: var(--rich-terracotta);
+  --main-bg: var(--warm-cream);
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--warm-cream);
+  color: var(--dark-brown);
+  line-height: 1.6;
 }
 
 h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: var(--deep-forest);
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+  color: var(--warm-brown);
 }
 
 h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--warm-gray);
 }
 
 button {
   padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  background-color: var(--rich-terracotta);
+  color: var(--cream-white);
+  border: 2px solid var(--rich-terracotta);
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  font-family: inherit;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--burnt-orange);
+  border-color: var(--burnt-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(62, 39, 35, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(62, 39, 35, 0.2);
 }
 
 ul {
   list-style: none;
 }
+
+dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+dl div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+dd {
+  margin-left: 1.5rem;
+  color: var(--warm-gray);
+}
+
+/* Additional Rustic & Warm Styling */
+input, textarea, select {
+  background-color: var(--cream-white);
+  border: 2px solid var(--soft-sage);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: var(--dark-brown);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--rich-terracotta);
+  box-shadow: 0 0 0 3px rgba(198, 93, 6, 0.1);
+}
+
+/* Card and container backgrounds */
+.container, .main-content {
+  background-color: var(--warm-cream);
+  color: var(--dark-brown);
+}
+
+/* Secondary buttons */
+.btn-secondary {
+  background-color: var(--soft-sage);
+  color: var(--dark-brown);
+  border-color: var(--soft-sage);
+}
+
+.btn-secondary:hover {
+  background-color: var(--warm-gray);
+  border-color: var(--warm-gray);
+}
+
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Links */
+a {
+  color: var(--rich-terracotta);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--burnt-orange);
+  text-decoration: underline;
+}
+
+/* Loading and feedback states */
+.success {
+  color: var(--deep-forest);
+  background-color: rgba(74, 93, 35, 0.1);
+}
+
+.warning {
+  color: var(--burnt-orange);
+  background-color: rgba(204, 122, 0, 0.1);
+}
+
+.error {
+  color: var(--warm-brown);
+  background-color: rgba(139, 90, 60, 0.1);
+}
+

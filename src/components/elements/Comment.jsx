@@ -1,8 +1,9 @@
 import { fullStarSVG, emptyStarSVG } from "../../utils/svg";
 
+import s from "../../styles/elements/comment.module.css";
+
 function stars(rating, commentIndex) {
   const maxStars = 5;
-  let fullStars = rating;
 
   return new Array(maxStars).fill(null).map((i, index) => {
     return (
@@ -15,7 +16,7 @@ function stars(rating, commentIndex) {
 
 function Comment({ info, commentIndex }) {
   return (
-    <article>
+    <article className={s.container}>
       <header>
         <h3>{info.reviewerName}</h3>
         <time dateTime={info.date}></time>

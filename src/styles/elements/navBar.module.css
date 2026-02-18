@@ -3,14 +3,20 @@
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
+    background-color: var(--light-sand);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--soft-sage);
+    box-shadow: 0 2px 8px rgba(62, 39, 35, 0.1);
 }
 
 .navItem {
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1.3rem;
-    color: #333;
+    color: var(--warm-brown);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
 .link {
@@ -19,10 +25,14 @@
 }
 
 .navItem:hover {
-    color: #0070f3;
+    color: var(--rich-terracotta);
+    background-color: var(--cream-white);
+    transform: translateY(-1px);
 }
 
 .navItemActive {
-    color: #0070f3;
+    color: var(--rich-terracotta);
     font-weight: bold;
+    background-color: var(--cream-white);
+    border-bottom: 2px solid var(--rich-terracotta);
 }

@@ -1,14 +1,26 @@
 .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
+    border: 2px solid var(--soft-sage);
+    border-radius: 12px;
+    padding: 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--cream-white);
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
+    border-color: var(--warm-brown);
+    cursor: pointer;
 }
 
 .img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }

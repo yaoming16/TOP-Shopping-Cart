@@ -1,0 +1,13 @@
+.container {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  background-color: var(--cream-white);
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}

@@ -1,8 +1,11 @@
 .carouselContainer {
-    background: #f1f1f1;
-    display : flex;
+    background: var(--light-sand);
+    display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid var(--soft-sage);
+    box-shadow: 0 4px 16px rgba(62, 39, 35, 0.1);
 }
 
 .carouselItem {
@@ -19,24 +22,33 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.2);
-    color: white;
-    border: none;
-    padding: 1rem;
+    background: rgba(139, 90, 60, 0.8);
+    color: var(--cream-white);
+    border: 2px solid var(--warm-brown);
+    padding: 0.65rem;
     cursor: pointer;
     z-index: 1;
     transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carBtn:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--rich-terracotta);
+    border-color: var(--rich-terracotta);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carBtnLeft {
-    left: 0;
+    left: 1rem;
 }
+
 .carBtnRight {
-    right: 0;
+    right: 1rem;
 }
 
 .img {

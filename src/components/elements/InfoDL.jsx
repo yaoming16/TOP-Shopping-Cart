@@ -5,10 +5,10 @@ function InfoDL({ name, info }) {
   // If both name and info have the same length and both are arrays
   if (nameIsArray && infoIsArray && name.length === info.length) {
     return info.map((inf, index) => (
-      <>
-        <dt>{name[index]}</dt>
+      <div>
+        <dt>{name[index]}:</dt>
         <dd>{inf}</dd>
-      </>
+      </div>
     ));
   }
 
@@ -20,10 +20,10 @@ function InfoDL({ name, info }) {
     name !== undefined
   ) {
     return (
-      <>
-        <dt>{name}</dt>
+      <div>
+        <dt>{name}:</dt>
         <dd>{info}</dd>
-      </>
+      </div>
     );
   }
 

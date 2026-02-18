@@ -8,7 +8,7 @@ function AddToCart({itemInfo}) {
   const cart = useCart();
 
   return (
-    <div>
+    <div className="add-to-cart">
       <QuantityInput min={1} value={quantity} onChange={setQuantity}  />
       <button onClick={() => cart.addItem(itemInfo, quantity)}>Add to Cart</button>
     </div>

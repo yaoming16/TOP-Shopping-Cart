@@ -1,4 +1,4 @@
-function QuantityInput({ value, onChange, min = 1 }) {
+function QuantityInput({ value, onChange, min = 1, className = "" }) {
 
   function validateNewValue(newValue) {
     if (isNaN(newValue) || newValue <= min) {
@@ -9,6 +9,7 @@ function QuantityInput({ value, onChange, min = 1 }) {
 
   return (
     <input 
+      className={className}
       type="number" 
       min={min} 
       value={value} 
