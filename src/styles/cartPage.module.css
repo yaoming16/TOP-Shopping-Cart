@@ -1,0 +1,26 @@
+.main {
+    padding: 2rem;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.total {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+    color: var(--warm-gray);
+}
+
+.p {
+  color: var(--deep-forest);
+}
+
+.title {
+    text-align: center;
+}

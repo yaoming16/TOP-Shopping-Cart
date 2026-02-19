@@ -3,6 +3,8 @@ import CartCard from "../elements/CartCard";
 
 import useCart from "../../hooks/useCart";
 
+import s from "../../styles/cartPage.module.css";
+
 function CartPage() {
   const cart = useCart();
   let {totalPrice, totalItems} = cart.calculateTotals();
@@ -10,18 +12,16 @@ function CartPage() {
   return (
     <>
       <NavBar />
-      <main>
-        <h1>Shopping Cart</h1>
+      <main className={s.main}>
+        <h1 className={s.title}>Shopping Cart</h1>
         <section>
-          <ul>
+          <ul className={s.cardsContainer}>
             {cart.items.map((item) => <CartCard itemInfo={item} key={item.id} />)}
           </ul>
         </section>
         <section>
-          <p>Total: {Math.round(totalPrice,2)}</p>
+          <p className={s.total}>Total: <span className={s.p}>${Math.round(totalPrice * 100) / 100}</span></p>
         </section>
-        { "Total Itmems     "+ totalItems}
-        {"Total Price  " + totalPrice}
       </main>
     </>
   );
