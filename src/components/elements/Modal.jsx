@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import s from "../../styles/elements/modal.module.css";
 
@@ -34,27 +34,19 @@ function Modal({ info, open = false, setOpen }) {
     carouselOrOneImg = <Carousel itemName={info.title} photos={info.images} />;
   } else {
     carouselOrOneImg = (
+      <div className={s.imgContainer}>
         <img
           src={info.images.length === 1 ? info.images[0] : info.thumbnail}
           alt={info.title}
           className={s.img}
         />
-
+      </div>
     );
   }
 
   return (
-    <dialog 
-      className={s.dialog} 
-      closedby="any" 
-      ref={ref}
-      onClick={handleBackdropClick}
-    >
-      <button
-        className={s.closeModal}
-        autoFocus
-        onClick={() => setOpen(false)}
-      >
+    <dialog className={s.dialog} ref={ref} onClick={handleBackdropClick}>
+      <button className={s.closeModal} autoFocus onClick={() => setOpen(false)}>
         {closeSVG}
       </button>
       <article>
@@ -65,7 +57,9 @@ function Modal({ info, open = false, setOpen }) {
         </header>
 
         <section aria-labelledby="product-details">
-          <h2 id="product-details" className={s.title}>Product Details</h2>
+          <h2 id="product-details" className={s.title}>
+            Product Details
+          </h2>
           <p>{info.description}</p>
           <dl>
             <InfoDL name="Brand" info={info.brand} />

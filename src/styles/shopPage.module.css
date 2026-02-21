@@ -1,58 +1,65 @@
 .itemsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .mainDiv {
-    margin-top: 2rem;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--warm-cream);
+  margin-top: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--warm-cream);
 }
 
 .shopDiv {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem 0;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 .categoriesAside {
-    width: 20%;
-    padding-right: 2rem;
-    background-color: var(--cream-white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 2px solid var(--light-sand);
-    height: fit-content;
-    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
+  width: 20%;
+  padding-right: 2rem;
+  background-color: var(--cream-white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid var(--light-sand);
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
 }
 
 .categoriesDiv {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .categoriesDiv button {
-    background-color: var(--light-sand);
-    color: var(--warm-brown);
-    border: 2px solid var(--soft-sage);
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 500;
+  background-color: var(--light-sand);
+  color: var(--warm-brown);
+  border: 2px solid var(--soft-sage);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 500;
 }
 
 .categoriesDiv button:hover {
-    background-color: var(--soft-sage);
-    color: var(--dark-brown);
+  background-color: var(--soft-sage);
+  color: var(--dark-brown);
 }
 
 .categoriesDiv button.active {
-    background-color: var(--rich-terracotta);
-    color: var(--cream-white);
-    border-color: var(--rich-terracotta);
+  background-color: var(--rich-terracotta);
+  color: var(--cream-white);
+  border-color: var(--rich-terracotta);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--warm-brown);
+  margin-bottom: 1rem;
 }

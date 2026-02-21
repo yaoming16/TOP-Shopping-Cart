@@ -55,7 +55,9 @@ function ShopPage() {
     <>
       <NavBar />
       <main>
-        {modalInfo? <Modal open={openModal} setOpen={setOpenModal} info={modalInfo}/> : null}
+        {modalInfo ? (
+          <Modal open={openModal} setOpen={setOpenModal} info={modalInfo} />
+        ) : null}
         <div className={s.mainDiv}>
           <h1>Shop</h1>
           <div className={s.shopDiv}>
@@ -66,7 +68,7 @@ function ShopPage() {
                 {categoryInfo.map((category, index) => (
                   <Button
                     text={category.name}
-                    manageClick={() => setSelectedCategory(category)}
+                    manageClick={(e) => setSelectedCategory(category)}
                     key={`${category.slug}-${index}`}
                   />
                 ))}
@@ -74,11 +76,15 @@ function ShopPage() {
             </aside>
             <section className={s.itemsSection}>
               <h2>Products</h2>
-              <p>{selectedCategory?.name}</p>
+              <p className={s.title}>{selectedCategory?.name}</p>
               {loadingItems ? <Loading /> : null}
               <ul className={s.itemsGrid}>
                 {selectedItems.map((item) => (
-                  <ItemCard info={item} key={'shop-' + item.id} manageClick={itemCardClick} />
+                  <ItemCard
+                    info={item}
+                    key={"shop-" + item.id}
+                    manageClick={itemCardClick}
+                  />
                 ))}
               </ul>
             </section>

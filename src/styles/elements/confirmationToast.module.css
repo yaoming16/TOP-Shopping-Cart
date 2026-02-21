@@ -1,0 +1,14 @@
+.container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: none;
+}
+
+.show {
+  display: block;
+}

@@ -1,62 +1,72 @@
 .dialog {
-    margin: auto auto;
-    width: 70%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--main-btn-border);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: var(--main-bg);
+  margin: auto auto;
+  width: 70%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--main-btn-border);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--main-bg);
 }
 
 .dialog::backdrop {
-    background: var(--backdrop-color, rgba(62, 39, 35, 0.6));
-    backdrop-filter: blur(2px);
-    transition: all 0.3s ease;
+  background: var(--backdrop-color, rgba(62, 39, 35, 0.6));
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
 }
 
 /* hide native dialog when not open (override browser/css that forces it visible) */
 .dialog:not([open]) {
-    display: none !important;
+  display: none !important;
 }
 
 /* fallback visible class for environments without dialog API */
 .dialog.visible {
-    display: block;
+  display: block;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .img {
-    width: 100%;
-    object-fit: cover;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+  width: 100%;
+  max-width: 350px;
+  object-fit: cover;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .closeModal {
-    align-self: flex-end;
-    background-color: var(--warm-brown);
-    border: none;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem;
-    cursor: pointer;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    color: white;
-    transition: all 0.5s ease-in-out;
+  align-self: flex-end;
+  background-color: var(--warm-brown);
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease-in-out;
 }
 
 .closeModal:hover {
-    color: var(--rich-terracotta);
-    rotate: 180deg;
+  color: var(--rich-terracotta);
+  rotate: 180deg;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .mt1 {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
