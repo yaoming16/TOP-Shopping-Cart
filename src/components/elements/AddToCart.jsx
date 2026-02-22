@@ -11,7 +11,12 @@ function AddToCart({ itemInfo }) {
   return (
     <div className="add-to-cart">
       <QuantityInput min={1} value={quantity} onChange={setQuantity} />
-      <ConfirmationToast open={showToast} setOpen={setShowToast} />
+      <ConfirmationToast
+        open={showToast}
+        setOpen={setShowToast}
+        itemsAmount={quantity}
+        itemName={itemInfo.title}
+      />
       <button
         onClick={() => {
           cart.addItem(itemInfo, quantity);

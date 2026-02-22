@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 import s from "../../styles/elements/cartCard.module.css";
 
-function CartCard({ itemInfo }) {
+function CartCard({ itemInfo, onRemove }) {
   const [quantity, setQuantity] = useState(itemInfo.quantity);
   const cart = useCart();
 
@@ -23,7 +23,10 @@ function CartCard({ itemInfo }) {
         className={s.removeButton}
         aria-label={`Remove ${itemInfo.title} from cart`}
         type="button"
-        onClick={() => cart.removeItem(itemInfo)}
+        onClick={() => {
+          cart.removeItem(itemInfo);
+          onRemove(itemInfo, quantity);
+        }}
       >
         {trashSVG}
       </button>
@@ -41,7 +44,9 @@ function CartCard({ itemInfo }) {
           <div className={`${s.flexCol}`}>
             <p className={`${s.price}`}>${itemInfo.price}</p>
             <QuantityInput min={1} value={quantity} onChange={setQuantity} />
-            <p className={s.p}>Subtotal: <span className={s.subtotal}>${subtotal}</span></p>
+            <p className={s.p}>
+              Subtotal: <span className={s.subtotal}>${subtotal}</span>
+            </p>
           </div>
         </div>
       </article>

@@ -29,26 +29,30 @@
 
   /* Rustic & Warm Color Palette */
   /* Primary Colors */
-  --warm-cream: #F7F3E9;
-  --rich-terracotta: #C65D06;
-  --deep-forest: #4A5D23;
-  --warm-brown: #8B5A3C;
-  
+  --warm-cream: #f7f3e9;
+  --rich-terracotta: #c65d06;
+  --deep-forest: #4a5d23;
+  --warm-brown: #8b5a3c;
+
   /* Supporting Colors */
-  --soft-sage: #A8B299;
-  --warm-gray: #6B6B5C;
-  --dark-brown: #3E2723;
-  --light-sand: #E8DCC0;
-  --burnt-orange: #CC7A00;
-  --cream-white: #FAF8F3;
-  
+  --soft-sage: #a8b299;
+  --warm-gray: #6b6b5c;
+  --dark-brown: #3e2723;
+  --light-sand: #e8dcc0;
+  --burnt-orange: #cc7a00;
+  --cream-white: #faf8f3;
+  --toast-add-bg: #197b30;
+  --toast-remove-bg: #dc3545;
+  --toast-add-accent: #0a4116;
+  --toast-remove-accent: #b02a37;
+
   /* Legacy variables (updated) */
   --main-btn-border: var(--rich-terracotta);
   --main-bg: var(--warm-cream);
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: "Georgia", "Times New Roman", serif;
   background-color: var(--warm-cream);
   color: var(--dark-brown);
   line-height: 1.6;
@@ -120,7 +124,9 @@ dd {
 }
 
 /* Additional Rustic & Warm Styling */
-input, textarea, select {
+input,
+textarea,
+select {
   background-color: var(--cream-white);
   border: 2px solid var(--soft-sage);
   border-radius: 6px;
@@ -130,14 +136,17 @@ input, textarea, select {
   transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--rich-terracotta);
   box-shadow: 0 0 0 3px rgba(198, 93, 6, 0.1);
 }
 
 /* Card and container backgrounds */
-.container, .main-content {
+.container,
+.main-content {
   background-color: var(--warm-cream);
   color: var(--dark-brown);
 }
@@ -189,4 +198,3 @@ a:hover {
   color: var(--warm-brown);
   background-color: rgba(139, 90, 60, 0.1);
 }
-
