@@ -25,7 +25,7 @@ function CartCard({ itemInfo, onRemove }) {
         type="button"
         onClick={() => {
           cart.removeItem(itemInfo);
-          onRemove(itemInfo, quantity);
+          onRemove(itemInfo.title, quantity);
         }}
       >
         {trashSVG}

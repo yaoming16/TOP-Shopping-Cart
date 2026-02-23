@@ -17,6 +17,12 @@
   border-left: 4px solid var(--toast-add-accent);
 }
 
+.remove {
+  background-color: var(--toast-remove-bg);
+  color: var(--warm-cream);
+  border-left: 4px solid var(--toast-remove-accent);
+}
+
 .show {
   display: block;
   animation:

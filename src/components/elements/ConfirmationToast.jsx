@@ -25,7 +25,7 @@ function ConfirmationToast({
   }, [open]);
 
   return (
-    <div className={`${open ? s.show : null} ${s.container} ${s.add}`}>
+    <div className={`${open ? s.show : null} ${s.container} ${add ? s.add : s.remove}`}>
       <button className={s.closeBtn} onClick={() => setOpen(false)}>
         {closeSVG}
       </button>

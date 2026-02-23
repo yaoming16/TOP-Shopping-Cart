@@ -19,8 +19,8 @@ function CartPage() {
   function onCardRemove(itemName, itemAmount) {
     setOpenToast(true);
     setToastInfo({
-      itemName,
-      itemAmount,
+      itemName: itemName,
+      itemAmount: itemAmount,
     });
   }
 
