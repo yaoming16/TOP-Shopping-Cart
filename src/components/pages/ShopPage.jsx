@@ -62,7 +62,7 @@ function ShopPage() {
           <h1>Shop</h1>
           <div className={s.shopDiv}>
             <aside className={s.categoriesAside}>
-              <h2>Categories</h2>
+              <h2 className={s.title}>Categories</h2>
               {loadingCategory ? <Loading /> : null}
               <div role="group" className={s.categoriesDiv}>
                 {categoryInfo.map((category, index) => (
