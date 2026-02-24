@@ -75,7 +75,7 @@ function Modal({ info, open = false, setOpen }) {
           </dl>
         </section>
         <section>
-          <AddToCart itemInfo={info} />
+          <AddToCart itemInfo={info} modalOpen={open} />
         </section>
         <aside aria-labelledby="reviews-heading">
           <h2 className={`${s.title} ${s.mt1}`}>User Reviews</h2>

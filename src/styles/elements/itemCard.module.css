@@ -24,3 +24,14 @@
     border-radius: 8px;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+  .img {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

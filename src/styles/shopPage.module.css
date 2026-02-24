@@ -15,6 +15,7 @@
 .shopDiv {
   display: flex;
   flex-direction: row;
+  text-align: center;
   gap: 2rem;
   padding: 2rem 0;
   width: 100%;
@@ -59,7 +60,7 @@
 }
 
 .title {
-  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--warm-brown);
   margin-bottom: 1rem;
@@ -78,5 +79,31 @@
 @media (max-width: 940px) {
   .mainDiv {
     width: 95%;
+  }
+  .categoriesAside {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .shopDiv {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .categoriesAside {
+    width: 100%;
+  }
+
+  .categoriesDiv {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .categoriesDiv button {
+    flex: 1 1 auto;
+    min-width: fit-content;
+    text-align: center;
   }
 }
