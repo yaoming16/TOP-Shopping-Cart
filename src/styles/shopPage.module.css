@@ -6,7 +6,7 @@
 
 .mainDiv {
   margin-top: 2rem;
-  width: 80%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   background-color: var(--warm-cream);
@@ -23,10 +23,9 @@
 
 .categoriesAside {
   width: 20%;
-  padding-right: 2rem;
   background-color: var(--cream-white);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 0.5rem;
   border: 2px solid var(--light-sand);
   height: fit-content;
   box-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
@@ -79,9 +78,6 @@
 @media (max-width: 940px) {
   .mainDiv {
     width: 95%;
-  }
-  .categoriesAside {
-    padding: 0.75rem;
   }
 }
 
