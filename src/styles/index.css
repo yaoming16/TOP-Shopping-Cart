@@ -1,27 +1,3 @@
-/*
- * ================================
- * RUSTIC & WARM COLOR PALETTE
- * ================================
- * 
- * This palette creates a cozy, home-like atmosphere with warm, earthy tones
- * inspired by rustic aesthetics and natural materials.
- * 
- * Primary Colors:
- * - Warm Cream (#F7F3E9): Main background, soft and inviting
- * - Rich Terracotta (#C65D06): Primary accent, warm and earthy
- * - Deep Forest (#4A5D23): Secondary accent, grounding dark green
- * - Warm Brown (#8B5A3C): Tertiary accent, wood-like warmth
- * 
- * Supporting Colors:
- * - Soft Sage (#A8B299): Muted green for subtle accents
- * - Warm Gray (#6B6B5C): Body text, natural and readable
- * - Dark Brown (#3E2723): Headings and emphasis
- * - Light Sand (#E8DCC0): Subtle backgrounds and containers
- * - Burnt Orange (#CC7A00): Hover states and interactions
- * - Cream White (#FAF8F3): Clean highlights and cards
- * 
- */
-
 * {
   box-sizing: border-box;
   margin: 0;

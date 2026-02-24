@@ -70,3 +70,16 @@
 .mt1 {
   margin-top: 1rem;
 }
+
+@media (max-width: 1000px) {
+  .dialog {
+    width: 85%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dialog {
+    width: 90%;
+    padding: 1rem;
+  }
+}
