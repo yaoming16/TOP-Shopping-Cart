@@ -6,6 +6,7 @@ import Loading from "../elements/Loading.jsx";
 import Button from "../elements/Button.jsx";
 import ItemCard from "../elements/ItemCard.jsx";
 import Modal from "../elements/Modal.jsx";
+import Accordion from "../elements/Accordion.jsx";
 
 import s from "../../styles/shopPage.module.css";
 
@@ -51,6 +52,21 @@ function ShopPage() {
     setModalInfo(info);
   }
 
+  let categorySection = (
+    <>
+      {loadingCategory ? <Loading /> : null}
+      <div role="group" className={s.categoriesDiv}>
+        {categoryInfo.map((category, index) => (
+          <Button
+            text={category.name}
+            manageClick={(e) => setSelectedCategory(category)}
+            key={`${category.slug}-${index}`}
+          />
+        ))}
+      </div>
+    </>
+  );
+
   return (
     <>
       <NavBar />
@@ -62,17 +78,7 @@ function ShopPage() {
           <h1>Shop</h1>
           <div className={s.shopDiv}>
             <aside className={s.categoriesAside}>
-              <h2 className={s.title}>Categories</h2>
-              {loadingCategory ? <Loading /> : null}
-              <div role="group" className={s.categoriesDiv}>
-                {categoryInfo.map((category, index) => (
-                  <Button
-                    text={category.name}
-                    manageClick={(e) => setSelectedCategory(category)}
-                    key={`${category.slug}-${index}`}
-                  />
-                ))}
-              </div>
+              <Accordion title="Categories" content={categorySection}/>
             </aside>
             <section className={s.itemsSection}>
               <h2>Products</h2>
