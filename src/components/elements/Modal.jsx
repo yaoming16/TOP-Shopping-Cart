@@ -2,10 +2,13 @@ import { useEffect, useRef } from "react";
 
 import s from "../../styles/elements/modal.module.css";
 
+import { stars } from "../../utils/utils";
+
 import Carousel from "./Carousel";
 import Comment from "./Comment";
 import InfoDL from "./InfoDL";
 import AddToCart from "./AddToCart";
+import Accordion from "./Accordion";
 
 import { closeSVG } from "../../utils/svg";
 
@@ -27,6 +30,19 @@ function Modal({ info, open = false, setOpen }) {
       setOpen(false);
     }
   };
+
+  // calculate average review score
+  function calculateReviewScore(allReviews) {
+    let total = 0;
+    let count = 0;
+    for (let review of allReviews) {
+      total += review.rating;
+      count++;
+    }
+    return Math.round(total / count);
+  }
+
+  const averageReviewScore = calculateReviewScore(info.reviews);
 
   //if there is only one img for the item we dont need a carousel and just use an img tag. If no images we will use thumbnail.
   let carouselOrOneImg;
@@ -79,13 +95,23 @@ function Modal({ info, open = false, setOpen }) {
         </section>
         <aside aria-labelledby="reviews-heading">
           <h2 className={`${s.title} ${s.mt1}`}>User Reviews</h2>
-          {info.reviews.map((review, index) => (
-            <Comment
-              info={review}
-              commentIndex={index}
-              key={`review-${info.id}-${index}`}
-            />
-          ))}
+          <div className={s.averageContainer}>
+            <p className={s.average}>{averageReviewScore}</p>
+            <div className={s.averageStars}>
+              {stars(averageReviewScore, info.reviews.length + 1)}
+            </div>
+          </div>
+          <Accordion
+            content={info.reviews.map((review, index) => (
+              <Comment
+                info={review}
+                commentIndex={index}
+                key={`review-${info.id}-${index}`}
+              />
+            ))}
+            title="See all reviews"
+            startOpen={false}
+          />
         </aside>
       </article>
     </dialog>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchData } from "../../utils/utils.js";
+import { fetchData } from "../../utils/utils.jsx";
 
 import NavBar from "../elements/NavBar";
 import Loading from "../elements/Loading.jsx";
@@ -24,11 +24,19 @@ function ShopPage() {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
+    setLoadingCategory(true);
+    let sessionStorageCategories = sessionStorage.getItem("category");
+    if (sessionStorageCategories) {
+      sessionStorageCategories = JSON.parse(sessionStorageCategories);
+      setCategoryInfo(sessionStorageCategories);
+      setLoadingCategory(false);
+      return;
+    }
     (async function () {
-      setLoadingCategory(true);
       const data = await fetchData(BASE_URL + CATEGORIES);
       if (data) {
         setCategoryInfo(data);
+        sessionStorage.setItem("category", JSON.stringify(data));
         setLoadingCategory(false);
       }
     })();
@@ -78,12 +86,15 @@ function ShopPage() {
           <h1>Shop</h1>
           <div className={s.shopDiv}>
             <aside className={s.categoriesAside}>
-              <Accordion title="Categories" content={categorySection}/>
+              <Accordion title="Categories" content={categorySection} />
             </aside>
             <section className={s.itemsSection}>
               <h2>Products</h2>
               <p className={s.title}>{selectedCategory?.name}</p>
               {loadingItems ? <Loading /> : null}
+              {selectedCategory ? null : (
+                <p>Select a category to start shoping</p>
+              )}
               <ul className={s.itemsGrid}>
                 {selectedItems.map((item) => (
                   <ItemCard

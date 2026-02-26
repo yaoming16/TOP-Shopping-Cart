@@ -2,17 +2,7 @@ import { fullStarSVG, emptyStarSVG } from "../../utils/svg";
 
 import s from "../../styles/elements/comment.module.css";
 
-function stars(rating, commentIndex) {
-  const maxStars = 5;
-
-  return new Array(maxStars).fill(null).map((i, index) => {
-    return (
-      <span key={`c-${commentIndex}-s-${index}`}>
-        {index < rating ? fullStarSVG : emptyStarSVG}
-      </span>
-    );
-  });
-}
+import { stars } from "../../utils/utils";
 
 function Comment({ info, commentIndex }) {
   return (

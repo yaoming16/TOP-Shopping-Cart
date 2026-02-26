@@ -71,6 +71,30 @@
   margin-top: 1rem;
 }
 
+.average {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--main-btn-border);
+  margin-top: 0.5rem;
+}
+
+.averageStars {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.averageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.averageContainer svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 @media (max-width: 1000px) {
   .dialog {
     width: 85%;
