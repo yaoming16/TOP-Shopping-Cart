@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import s from "../../styles/cartPage.module.css";
 import ConfirmationToast from "../elements/ConfirmationToast";
+import Footer from "../elements/Footer";
 
 function CartPage() {
   const cart = useCart();
@@ -50,6 +51,7 @@ function CartPage() {
           itemName={toastInfo.itemName}
         />
       </main>
+      <Footer />
     </>
   );
 }

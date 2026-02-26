@@ -3,8 +3,8 @@ import { Link } from "react-router";
 import "../../styles/index.css";
 import s from "../../styles/homePage.module.css";
 
-import Button from "../elements/Button";
 import NavBar from "../elements/NavBar";
+import Footer from "../elements/Footer";
 
 function HomePage() {
   return (
@@ -25,6 +25,7 @@ function HomePage() {
           </Link>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

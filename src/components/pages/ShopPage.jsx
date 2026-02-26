@@ -7,6 +7,7 @@ import Button from "../elements/Button.jsx";
 import ItemCard from "../elements/ItemCard.jsx";
 import Modal from "../elements/Modal.jsx";
 import Accordion from "../elements/Accordion.jsx";
+import Footer from "../elements/Footer.jsx";
 
 import s from "../../styles/shopPage.module.css";
 
@@ -108,6 +109,7 @@ function ShopPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
