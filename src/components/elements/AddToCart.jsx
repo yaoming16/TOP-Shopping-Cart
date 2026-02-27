@@ -5,6 +5,7 @@ import ConfirmationToast from "./ConfirmationToast";
 
 function AddToCart({ itemInfo, modalOpen = true }) {
   const [quantity, setQuantity] = useState(1);
+  const [toastAmount, setToastAmount] = useState(1);
   const [showToast, setShowToast] = useState(false);
   const cart = useCart();
 
@@ -18,13 +19,14 @@ function AddToCart({ itemInfo, modalOpen = true }) {
       <ConfirmationToast
         open={showToast}
         setOpen={setShowToast}
-        itemsAmount={quantity}
+        itemsAmount={toastAmount}
         itemName={itemInfo.title}
       />
       <button
         onClick={() => {
           cart.addItem(itemInfo, quantity);
           setShowToast(true);
+          setToastAmount(quantity);
           setQuantity(1);
         }}
       >

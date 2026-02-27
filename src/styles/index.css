@@ -29,11 +29,28 @@
   --main-bg: var(--warm-cream);
 }
 
+html,
 body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
   font-family: "Georgia", "Times New Roman", serif;
   background-color: var(--warm-cream);
   color: var(--dark-brown);
   line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make main grow and push footer down */
+main {
+  flex: 1;
 }
 
 h1 {
